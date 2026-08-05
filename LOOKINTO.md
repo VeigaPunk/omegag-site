@@ -23,4 +23,4 @@
 - Source tree: `~/Projects/omegaG/`
 
 ## Session goal
-Audit marketing site vs repo truth; note gaps, broken links, brand DS4CC→omegaG consistency, deploy path (kimi.page), and next product-site improvements. Report findings; do not force-push. Prefer local-first commits if implementing site fixes in a new tree.
+Audit marketing site vs repo truth; note gaps, broken links, brand DS4CC→omegaG consistency, deploy path (primary: GitHub Pages at https://veigapunk.github.io/omegag-site/; kimi.page is historical mirror only), and next product-site improvements. Report findings; do not force-push. Prefer local-first commits if implementing site fixes in a new tree.
