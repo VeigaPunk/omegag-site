@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <base href="/omegag-site/">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>omegaG — formerly DS4CC · controller-native agent control</title>
   <meta name="description" content="omegaG turns a DualSense or DualShock 4 controller into a Linux and Windows shortcut mapper for terminal-first development.">
   <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0a0a0b">
   <meta property="og:title" content="omegaG — formerly DS4CC">
   <meta property="og:description" content="Turn a PlayStation controller into a shortcut mapper for terminal-first development.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://veigapunk.github.io/omegag-site/">
   <meta property="og:image" content="https://veigapunk.github.io/omegag-site/assets/hero-journey.png">
   <meta name="twitter:card" content="summary_large_image">
-  <!-- Canonical host: GitHub Pages. Secondary mirror (historical): https://ds4cc-proto.kimi.page/ -->
   <link rel="canonical" href="https://veigapunk.github.io/omegag-site/">
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
   <link rel="stylesheet" href="style.css">
@@ -31,7 +32,7 @@
       <a href="#lightbar">Lightbar</a>
       <a href="#layer">Modifier layer</a>
       <a href="#specs">Specs</a>
-       <a href="https://github.com/vgpnk-holdings-llc/omegaG" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://github.com/vgpnk-holdings-llc/omegaG" target="_blank" rel="noopener noreferrer">GitHub</a>
     </div>
     <span class="nav-tag">formerly DS4CC</span>
   </nav>
@@ -54,7 +55,7 @@
 
   <!-- LIGHTBAR — Work Louder RGB section, mapped to the DualSense lightbar -->
   <section class="section" id="lightbar">
-     <p class="eyebrow">Windows-only lightbar feedback</p>
+    <p class="eyebrow">Windows-only lightbar feedback</p>
     <h2 class="section-title">Your agents, in color.</h2>
     <p class="section-lede">With the optional Windows-only Codex runtime enabled, six chat slots live behind the PS modifier. The controller lightbar can project the selected slot&rsquo;s state. The controls below are a website illustration of those documented states, not a live controller or HID connection.</p>
 
@@ -223,7 +224,7 @@
       <div class="spec-row"><dt>Platform</dt><dd>Windows 10 / 11 — hidden console, tray icon. Linux: Ubuntu 22.04+ and Arch with feature-parity mapping (evdev / uinput).</dd></div>
       <div class="spec-row"><dt>Controllers</dt><dd>DualSense and DualShock 4. USB and Bluetooth; USB takes priority, Bluetooth is the automatic fallback.</dd></div>
       <div class="spec-row"><dt>Feedback</dt><dd>Static lightbar color and mic LED are supported by the mapper. Codex status-to-lightbar projection is an optional Windows-only feature.</dd></div>
-      <div class="spec-row"><dt>Mapping</dt><dd>Every configurable button resolves to a key combo, a chord sequence, a tmux action, or a Claude Code action. On DualSense, touchpad swipe moves the cursor; DualShock 4 uses left-stick mouse because coordinates are unsupported. On both controllers, touchpad press clicks while touchpad handling is enabled. Right stick scrolls, vertical + horizontal; mute toggles the system microphone.</dd></div>
+      <div class="spec-row"><dt>Mapping</dt><dd>Every configurable button resolves to a key combo, a chord sequence, a tmux action, a Claude Code action, or a named <code>launcher:&lt;name&gt;</code> text inject (optional Enter). No default button is pre-wired to a launcher. On DualSense, touchpad swipe moves the cursor; DualShock 4 uses left-stick mouse because coordinates are unsupported. On both controllers, touchpad press clicks while touchpad handling is enabled. Right stick scrolls, vertical + horizontal; mute toggles the system microphone.</dd></div>
       <div class="spec-row"><dt>Detection</dt><dd>tmux and Claude Code keybindings are detected through WSL on Windows and natively on Linux. Missing pieces degrade gracefully to documented defaults.</dd></div>
       <div class="spec-row"><dt>Codex runtime</dt><dd>Windows-only, optional, and disabled by default. It supervises a local <code>codex app-server --stdio</code>. On Linux the configuration still parses, but enabling it logs a warning and the runtime is ignored.</dd></div>
       <div class="spec-row"><dt>Config</dt><dd>TOML. The preserved Windows path is <code>%APPDATA%\ds4cc\config.toml</code>. Linux uses <code>$XDG_CONFIG_HOME/ds4cc/config.toml</code>, falling back to <code>~/.config/ds4cc/config.toml</code> when <code>$XDG_CONFIG_HOME</code> is unset. Every setting is optional — defaults work out of the box.</dd></div>
@@ -261,11 +262,12 @@
   <footer class="footer" id="footer">
     <p class="footer-mark" aria-hidden="true">omegaG</p>
     <p class="footer-line">omegaG is a fork of <a href="https://github.com/VeigaPunk/DS4CC" target="_blank" rel="noopener noreferrer">VeigaPunk/DS4CC</a> — package and binary <code>ds4cc</code>, Windows config path preserved under MIT attribution.</p>
-    <p class="footer-line">Site: <a href="https://veigapunk.github.io/omegag-site/">veigapunk.github.io/omegag-site</a> · secondary mirror <a href="https://ds4cc-proto.kimi.page/" target="_blank" rel="noopener noreferrer">ds4cc-proto.kimi.page</a></p>
     <p class="footer-links">
       <a href="https://github.com/vgpnk-holdings-llc/omegaG" target="_blank" rel="noopener noreferrer">GitHub</a>
       &nbsp;·&nbsp;
       <a href="https://github.com/VeigaPunk/DS4CC/releases/latest" target="_blank" rel="noopener noreferrer">Upstream DS4CC releases</a>
+      &nbsp;·&nbsp;
+      <a href="https://github.com/vgpnk-holdings-llc/omegaG/blob/master/README.md" target="_blank" rel="noopener noreferrer">Docs</a>
       &nbsp;·&nbsp;
       MIT License
       &nbsp;·&nbsp;
