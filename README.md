@@ -6,8 +6,10 @@ Source of truth: [`vgpnk-holdings-llc/omegaG`](https://github.com/vgpnk-holdings
 
 ## Live
 
-- **Intended Pages URL:** https://veigapunk.github.io/omegag-site/
-- **Vercel mirror:** https://omegag.vercel.app/
+- **GitHub Pages (primary):** https://veigapunk.github.io/omegag-site/
+- **Vercel:** https://omegag.vercel.app/
+- **ds4cc.com standalone:** https://ds4cc.com/omegag/
+- **Org Pages:** https://vgpnk-holdings-llc.github.io/omegaG/
 - **Rolling zip:** https://github.com/vgpnk-holdings-llc/omegaG/releases/tag/website-static
 - **Canonical product repo:** https://github.com/vgpnk-holdings-llc/omegaG
 
