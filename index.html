@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <base href="/omegag-site/">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>omegaG — formerly DS4CC · controller-native agent control</title>
@@ -29,12 +30,9 @@
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://github.com" crossorigin>
   <link rel="dns-prefetch" href="https://ds4cc.com">
   <link rel="dns-prefetch" href="https://veigapunk.github.io">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script type="application/ld+json">
   {
@@ -70,12 +68,12 @@
       <a href="#layer">Modifier layer</a>
       <a href="#specs">Specs</a>
       <a href="https://github.com/vgpnk-holdings-llc/omegaG" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a href="https://ds4cc.com/">ds4cc.com</a>
+      <a class="nav-ext" href="https://ds4cc.com/">ds4cc.com</a>
     </div>
     <span class="nav-tag">formerly DS4CC</span>
   </nav>
 
-  <!-- HERO — Vibe City DualSense card -->
+  <!-- HERO — Vibe City DualSense card (single visual; CTAs stay in fold) -->
   <main id="main">
   <header class="hero" id="top">
     <figure class="vibe-card" data-animate>
@@ -84,18 +82,13 @@
         <img src="assets/masterpiece.png" alt="DualSense silhouette beside a neon pink Vibe City sign" width="1920" height="840" fetchpriority="high" decoding="async">
       </picture>
     </figure>
-    <picture class="hero-art-wrap">
-      <source srcset="assets/hero-journey-400.webp 400w, assets/hero-journey.webp 1280w" sizes="(max-width: 620px) 56vw, 240px" type="image/webp">
-      <img src="assets/hero-journey.png" alt="omegaG — DualSense controller badge" class="hero-art" width="1280" height="720" data-animate decoding="async">
-    </picture>
     <p class="hero-eyebrow" data-animate>formerly DS4CC — the shortcut mapper, preserved</p>
     <h1 class="hero-title" data-animate>omegaG</h1>
     <p class="hero-tagline" data-animate>Turn a PlayStation controller into a shortcut mapper for terminal-first development.</p>
-    <p class="hero-attribution" data-animate><em>Same package and binary (<code>ds4cc</code>); Windows config path preserved — MIT attribution intact.</em></p>
     <div class="hero-actions" data-animate>
       <a href="https://github.com/vgpnk-holdings-llc/omegaG" class="btn-primary" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-      <a href="https://github.com/VeigaPunk/DS4CC/releases/latest" class="btn-secondary" target="_blank" rel="noopener noreferrer">Windows installer (upstream)</a>
       <a href="https://github.com/vgpnk-holdings-llc/omegaG#quick-start" class="btn-secondary" target="_blank" rel="noopener noreferrer">Linux build</a>
+      <a href="https://github.com/VeigaPunk/DS4CC/releases/latest" class="btn-secondary btn-tertiary" target="_blank" rel="noopener noreferrer">Windows installer (upstream)</a>
     </div>
     <p class="hero-sub" data-animate>Linux and Windows shortcut mapping &nbsp;·&nbsp; DualSense &amp; DualShock 4 — USB + Bluetooth &nbsp;·&nbsp; tmux / Claude Code keybindings &nbsp;·&nbsp; Free &amp; open source &nbsp;·&nbsp; Built with Rust</p>
   </header>
@@ -183,16 +176,16 @@
           <button class="chip" type="button" aria-pressed="false" data-state="unassigned"      data-color=""><i aria-hidden="true"></i>unassigned</button>
         </div>
 
-        <div class="lb-slots" role="group" aria-label="Six chat slots">
-          <span class="slot" data-i="1">1</span>
-          <span class="slot" data-i="2">2</span>
-          <span class="slot is-sel" data-i="3" aria-current="true">3</span>
-          <span class="slot" data-i="4">4</span>
-          <span class="slot" data-i="5">5</span>
-          <span class="slot" data-i="6">6</span>
+        <div class="lb-slots" role="group" aria-label="Six chat slots — illustration only, not clickable">
+          <span class="slot" data-i="1" aria-disabled="true">1</span>
+          <span class="slot" data-i="2" aria-disabled="true">2</span>
+          <span class="slot is-sel" data-i="3" aria-current="true" aria-disabled="true">3</span>
+          <span class="slot" data-i="4" aria-disabled="true">4</span>
+          <span class="slot" data-i="5" aria-disabled="true">5</span>
+          <span class="slot" data-i="6" aria-disabled="true">6</span>
         </div>
         <p class="sr-only" role="status" aria-live="polite" aria-atomic="true">Selected slot 3 status: <span class="live-state">thinking</span></p>
-        <p class="lb-policy">slot source — <b>recent</b> · pinned · priority · custom</p>
+        <p class="lb-policy">slot source — <b>recent</b> · pinned · priority · custom · <b>selected slot (demo)</b></p>
 
         <p class="lb-note">In the Windows runtime, a controller lightbar is lossy: it shows the <em>selected</em> slot, not six colors at once. This status projection is not available on Linux. DS4 has no player or mute LEDs.</p>
       </div>
@@ -252,13 +245,13 @@
     </div>
   </section>
 
-  <!-- DEVICE SHOT + engravings — the masterpiece, etched like the macro pad -->
+  <!-- DEVICE SHOT — badge + engravings (masterpiece stays hero-only) -->
   <section class="device" id="device" aria-labelledby="device-title">
-    <h2 class="sr-only" id="device-title">DualSense device close-up</h2>
-    <div class="device-frame">
+    <h2 class="sr-only" id="device-title">omegaG DualSense badge</h2>
+    <div class="device-frame device-frame--badge">
       <picture>
-        <source srcset="assets/masterpiece.webp" type="image/webp">
-        <img src="assets/masterpiece.png" alt="Close-up DualSense silhouette beside a pink Vibe City sign" class="device-art" width="1920" height="840" loading="lazy" decoding="async">
+        <source srcset="assets/hero-journey.webp" type="image/webp">
+        <img src="assets/hero-journey.png" alt="omegaG DualSense controller badge" class="device-art device-art--badge" width="1280" height="720" loading="lazy" decoding="async">
       </picture>
       <span class="etch etch-left">omegaG&thinsp;|&thinsp;formerly DS4CC — 2026</span>
       <span class="etch etch-right">Configured voice dictates. Controller navigates.</span>
@@ -312,7 +305,7 @@
   <!-- FOOTER -->
   <footer class="footer" id="footer">
     <p class="footer-mark" aria-hidden="true">omegaG</p>
-    <p class="footer-line">omegaG is a fork of <a href="https://github.com/VeigaPunk/DS4CC" target="_blank" rel="noopener noreferrer">VeigaPunk/DS4CC</a> — package and binary <code>ds4cc</code>, Windows config path preserved under MIT attribution.</p>
+    <p class="footer-line">omegaG is a fork of <a href="https://github.com/VeigaPunk/DS4CC" target="_blank" rel="noopener noreferrer">VeigaPunk/DS4CC</a> — Same package and binary (<code>ds4cc</code>); Windows config path preserved — MIT attribution intact.</p>
     <p class="footer-links">
       <a href="https://github.com/vgpnk-holdings-llc/omegaG" target="_blank" rel="noopener noreferrer">GitHub</a>
       &nbsp;·&nbsp;
